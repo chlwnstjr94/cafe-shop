@@ -11,34 +11,36 @@ import NotFound from "./pages/NotFound";
 import ProductDetail from "./pages/ProductDetail";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-const router = createBrowserRouter({
-  path: "/",
-  element: <App />,
-  errorElement: <NotFound />,
-  children: [
-    {
-      index: true,
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/products",
-      element: <AllProducts />,
-    },
-    {
-      path: "/products/new",
-      element: <NewProduct />,
-    },
-    {
-      path: "/products/:id",
-      element: <ProductDetail />,
-    },
-    {
-      path: "/carts",
-      element: <MyCart />,
-    },
-  ],
-});
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/products",
+        element: <AllProducts />,
+      },
+      {
+        path: "/products/new",
+        element: <NewProduct />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetail />,
+      },
+      {
+        path: "/carts",
+        element: <MyCart />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
